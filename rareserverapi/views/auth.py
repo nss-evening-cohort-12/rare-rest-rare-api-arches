@@ -46,3 +46,31 @@ def register_user(request):
     # Return the token to the client
     data = json.dumps({"token": token.key})
     return HttpResponse(data, content_type='application/json')
+
+@csrf_exempt
+def login_user(request):
+    # the request data
+    req_body = json.loads(request.body.decode())
+
+    # Using Django native auth
+    if request.method == 'POST':
+        username = req_body['username']
+        password = req_body['password']
+        authenticated_user = authenticate(username=username, password=password)
+
+        # If authentication was successful, respond with their token
+        if authenticated_user is not None:
+
+          try:
+            token = Token.objects.get(user=authenticated_user)
+            data = json.dumps({"valid": True, "token": token.key})
+            return HttpResponse(data, content_type='application/json')
+          except:
+            print("There was a problem logging in the user")
+            data = json.dumps({"valid": False, "msg": "There was a server error when logging in the user"})
+            return HttpResponse(data, content_type='application/json')
+
+        else:
+            # Bad login details were provided. So we can't log the user in.
+            data = json.dumps({"valid": False})
+            return HttpResponse(data, content_type='application/json')
