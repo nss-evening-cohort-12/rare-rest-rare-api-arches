@@ -1,0 +1,46 @@
+[
+    {
+        "model": "rareserverapi.rareusers",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "about Nikhil",
+            "profile_image_url": "image_url_placeholder",
+            "created_on": "2020-08-28",
+            "active": true
+        }
+    },
+    {
+        "model": "rareserverapi.rareusers",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "bio": "about Jonathan",
+            "profile_image_url": "image_url_placeholder",
+            "created_on": "2020-08-28",
+            "active": true
+        }
+    },
+    {
+        "model": "rareserverapi.rareusers",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "bio": "about Nick",
+            "profile_image_url": "image_url_placeholder",
+            "created_on": "2020-08-28",
+            "active": true
+        }
+    },
+    {
+        "model": "rareserverapi.rareusers",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "bio": "about Ponch",
+            "profile_image_url": "image_url_placeholder",
+            "created_on": "2020-08-28",
+            "active": true
+        }
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "model": "rareserverapi.post",
+        "pk": 1,
+        "fields": {
+            "rareuser_id": 1,
+            "category_id": 1,
+            "title": "Post 1",
+            "publication_date": "2020-09-29",
+            "image_url": "image_url_placeholder",
+            "content": "This is all about post 1",
+            "approved": true
+        }
+    },
+    {
+        "model": "rareserverapi.post",
+        "pk": 2,
+        "fields": {
+            "rareuser_id": 2,
+            "category_id": 2,
+            "title": "Post 2",
+            "publication_date": "2020-09-29",
+            "image_url": "image_url_placeholder",
+            "content": "This is all about post 2",
+            "approved": true
+        }
+    },
+    {
+        "model": "rareserverapi.post",
+        "pk": 3,
+        "fields": {
+            "rareuser_id": 3,
+            "category_id": 3,
+            "title": "Post 3",
+            "publication_date": "2020-09-29",
+            "image_url": "image_url_placeholder",
+            "content": "This is all about post 3",
+            "approved": true
+        }
+    },
+    {
+        "model": "rareserverapi.post",
+        "pk": 4,
+        "fields": {
+            "rareuser_id": 4,
+            "category_id": 4,
+            "title": "Post 4",
+            "publication_date": "2020-09-29",
+            "image_url": "image_url_placeholder",
+            "content": "This is all about post 4",
+            "approved": true
+        }
+    }
+]
