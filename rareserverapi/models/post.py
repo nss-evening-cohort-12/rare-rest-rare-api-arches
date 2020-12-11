@@ -18,7 +18,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=75)
     publication_date = models.DateField(auto_now_add=True)
-    image_url = models.ImageField()
+    image_url = models.CharField(max_length=255)
     content = models.TextField()
     approved = models.BooleanField(default=False)
     tags = models.ManyToManyField(
