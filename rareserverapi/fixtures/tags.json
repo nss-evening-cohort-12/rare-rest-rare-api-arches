@@ -1,0 +1,30 @@
+[
+    {
+        "model": "rareserverapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "tag1"
+        }
+    },
+    {
+        "model": "rareserverapi.tag",
+        "pk": 2,
+        "fields": {
+            "label": "tag2"
+        }
+    },
+    {
+        "model": "rareserverapi.tag",
+        "pk": 3,
+        "fields": {
+            "label": "tag3"
+        }
+    },
+    {
+        "model": "rareserverapi.tag",
+        "pk": 4,
+        "fields": {
+            "label": "tag4"
+        }
+    }
+]
