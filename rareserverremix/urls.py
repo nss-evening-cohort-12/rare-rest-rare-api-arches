@@ -17,9 +17,10 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
-from rareserverapi.views import register_user, login_user
+from rareserverapi.views import register_user, login_user, PostsViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'posts', PostsViewSet, 'posts')
 
 urlpatterns = [
     path('', include(router.urls)),
