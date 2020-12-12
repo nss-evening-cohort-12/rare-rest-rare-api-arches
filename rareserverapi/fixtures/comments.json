@@ -1,0 +1,34 @@
+[
+  {
+      "model": "rareserverapi.comment",
+      "pk": 1,
+      "fields": {
+          "post_id": "tag1",
+          "author_id": "", 
+          "content": "",
+          "subject": "",
+          "created_on": ""
+      }
+  },
+  {
+      "model": "rareserverapi.comment",
+      "pk": 2,
+      "fields": {
+          "label": "tag2"
+      }
+  },
+  {
+      "model": "rareserverapi.comment",
+      "pk": 3,
+      "fields": {
+          "label": "tag3"
+      }
+  },
+  {
+      "model": "rareserverapi.comment",
+      "pk": 4,
+      "fields": {
+          "label": "tag4"
+      }
+  }
+]

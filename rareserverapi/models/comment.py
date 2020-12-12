@@ -13,9 +13,9 @@ class Comment(models.Model):
     author_id = models.ForeignKey(
         "RareUsers", 
         on_delete=CASCADE, 
-        related_name="users", 
-        related_query_name="user"
+        related_name="rareusers", 
+        related_query_name="rareuser"
     )
     content = models.TextField()
     subject = models.CharField(max_length=255)
-    created_on = models.DateField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
