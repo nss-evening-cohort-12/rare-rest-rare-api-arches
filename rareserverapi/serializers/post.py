@@ -7,4 +7,4 @@ class PostSerializer(serializers.ModelSerializer):
         rareuser = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
         category = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
         fields = ('id', 'rareuser', 'category', 'title', 'publication_date', 'image_url', 'content', 'approved')
-        depth = 1
+        depth = 2
