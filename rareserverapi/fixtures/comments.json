@@ -3,32 +3,110 @@
       "model": "rareserverapi.comment",
       "pk": 1,
       "fields": {
-          "post_id": "tag1",
-          "author_id": "", 
-          "content": "",
-          "subject": "",
-          "created_on": ""
+          "post_id": 1,
+          "author_id": 1, 
+          "content": "Test Comment #1",
+          "subject": "Comment #1 Subject",
+          "created_on": "2020-12-12 19:01:14.248556"
       }
   },
   {
-      "model": "rareserverapi.comment",
-      "pk": 2,
-      "fields": {
-          "label": "tag2"
-      }
+    "model": "rareserverapi.comment",
+    "pk": 2,
+    "fields": {
+        "post_id": 1,
+        "author_id": 2, 
+        "content": "Test Comment #2",
+        "subject": "Comment #2 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
   },
   {
-      "model": "rareserverapi.comment",
-      "pk": 3,
-      "fields": {
-          "label": "tag3"
-      }
+    "model": "rareserverapi.comment",
+    "pk": 3,
+    "fields": {
+        "post_id": 2,
+        "author_id": 4, 
+        "content": "Test Comment #3",
+        "subject": "Comment #3 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
   },
   {
-      "model": "rareserverapi.comment",
-      "pk": 4,
-      "fields": {
-          "label": "tag4"
-      }
+    "model": "rareserverapi.comment",
+    "pk": 4,
+    "fields": {
+        "post_id": 2,
+        "author_id": 2, 
+        "content": "Test Comment #4",
+        "subject": "Comment #4 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 5,
+    "fields": {
+        "post_id": 2,
+        "author_id": 3, 
+        "content": "Test Comment #5",
+        "subject": "Comment #5 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 6,
+    "fields": {
+        "post_id": 3,
+        "author_id": 1, 
+        "content": "Test Comment #6",
+        "subject": "Comment #6 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 7,
+    "fields": {
+        "post_id": 4,
+        "author_id": 4, 
+        "content": "Test Comment #7",
+        "subject": "Comment #7 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 8,
+    "fields": {
+        "post_id": 1,
+        "author_id": 1, 
+        "content": "Test Comment #8",
+        "subject": "Comment #8 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 9,
+    "fields": {
+        "post_id": 2,
+        "author_id": 3, 
+        "content": "Test Comment #9",
+        "subject": "Comment #9 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
+  },
+  {
+    "model": "rareserverapi.comment",
+    "pk": 10,
+    "fields": {
+        "post_id": 2,
+        "author_id": 2, 
+        "content": "Test Comment #10",
+        "subject": "Comment #10 Subject",
+        "created_on": "2020-12-12 19:01:14.248556"
+    }
   }
 ]
