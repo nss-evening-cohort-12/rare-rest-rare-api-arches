@@ -1,0 +1,30 @@
+[
+  {
+      "model": "rareserverapi.category",
+      "pk": 1,
+      "fields": {
+          "label": "category1"
+      }
+  },
+  {
+      "model": "rareserverapi.category",
+      "pk": 2,
+      "fields": {
+          "label": "category2"
+      }
+  },
+  {
+      "model": "rareserverapi.category",
+      "pk": 3,
+      "fields": {
+          "label": "category3"
+      }
+  },
+  {
+      "model": "rareserverapi.category",
+      "pk": 4,
+      "fields": {
+          "label": "category4"
+      }
+  }
+]

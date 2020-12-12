@@ -1,0 +1,11 @@
+{
+  "python.linting.pylintEnabled": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "raredb",
+      "database": "${workspaceFolder:rare-rest-rare-api-arches}/db.sqlite3"
+    }
+  ]
+}
