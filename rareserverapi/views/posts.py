@@ -76,6 +76,10 @@ class PostsViewSet(ViewSet):
         category = self.request.query_params.get('category', None)
         user = self.request.query_params.get('user', None)
 
+        # These filters all you to do http://localhost:8000/posts?category=1 or
+        # http://localhost:8000/posts?user=1 or
+        # http://localhost:8000/posts?category=1&user=2
+        
         if category is not None:
             posts = posts.filter(category__id=category)
 
