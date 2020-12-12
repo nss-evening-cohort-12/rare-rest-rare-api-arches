@@ -74,8 +74,13 @@ class PostsViewSet(ViewSet):
     def list(self, request):
         posts = Post.objects.all()
         category = self.request.query_params.get('category', None)
+        user = self.request.query_params.get('user', None)
+
         if category is not None:
             posts = posts.filter(category__id=category)
+
+        if user is not None:
+            posts = posts.filter(rareuser__id=user)
 
         serializer = PostSerializer(
             posts, many=True, context={'request': request})
