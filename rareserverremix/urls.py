@@ -17,11 +17,12 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
-from rareserverapi.views import register_user, login_user, PostsViewSet, CommentViewSet
+from rareserverapi.views import register_user, login_user, PostsViewSet, CommentViewSet, CategoriesViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostsViewSet, 'posts')
 router.register(r'comments', CommentViewSet, 'comments')
+router.register(r'categories', CategoriesViewSet, 'categories')
 
 urlpatterns = [
     path('', include(router.urls)),
