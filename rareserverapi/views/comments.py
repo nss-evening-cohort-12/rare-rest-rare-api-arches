@@ -15,10 +15,10 @@ class CommentViewSet(ViewSet):
         post = Post.objects.get(pk=request.data["post_id"])
 
         comment = Comment()
-        comment.post_id = post
+        comment.post = post
         comment.content = request.data["content"]
         comment.subject = request.data["subject"]
-        comment.author_id = creator
+        comment.author = creator
 
         try:
             comment.save()
@@ -73,10 +73,10 @@ class CommentViewSet(ViewSet):
         # http://localhost:8000/comments?user=1&post=2
         
         if  post is not None:
-            comments = comments.filter(post_id_id=post)
+            comments = comments.filter(post__id=post)
 
         if user is not None:
-            comments = comments.filter(author_id_id=user)
+            comments = comments.filter(author__id=user)
 
         serializer = CommentSerializer(
             comments, many=True, context={'request': request})

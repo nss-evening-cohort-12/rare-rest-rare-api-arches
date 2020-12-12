@@ -4,7 +4,7 @@ from rareserverapi.models import Comment
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        author_id = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
-        post_id = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
-        fields = ('id', 'post_id', 'author_id', 'content', 'subject', 'created_on')
+        author = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+        post = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+        fields = ('id', 'post', 'author', 'content', 'subject', 'created_on')
         depth = 1
