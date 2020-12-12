@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from rareserverapi.models import category
+from rareserverapi.models import Category
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = category.Category
+        model = Category
         fields = ('id', 'label')
