@@ -6,5 +6,5 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         rareuser = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
         category = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
-        fields = ('id', 'rareuser', 'category', 'title', 'publication_date', 'image_url', 'content', 'approved')
+        fields = ('id', 'rareuser', 'category', 'title', 'publication_date', 'image_url', 'content', 'approved', 'tags')
         depth = 2
