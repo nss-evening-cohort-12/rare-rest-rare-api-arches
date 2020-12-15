@@ -7,6 +7,7 @@ from rest_framework import serializers
 from rest_framework import status
 from rareserverapi.models import Post, RareUsers, Category, Tag
 from rareserverapi.serializers import PostSerializer
+from rest_framework.decorators import action
 
 class PostsViewSet(ViewSet):
 
@@ -89,3 +90,22 @@ class PostsViewSet(ViewSet):
         serializer = PostSerializer(
             posts, many=True, context={'request': request})
         return Response(serializer.data)
+
+    @action(methods=['POST'], detail=True)
+    def remove_tag(self, request, pk=None):
+
+        try:
+            post = Post.objects.get(pk=pk)
+            tag = Tag.objects.get(pk=request.data['tag_id'])
+            post.tags.remove(tag)
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except Post.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+        
+        except Tag.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
