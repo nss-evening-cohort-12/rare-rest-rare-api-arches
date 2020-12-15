@@ -8,4 +8,4 @@ class UsersSerializer(serializers.ModelSerializer):
         posts = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
         fields = ('id', 'user', 'bio', 'profile_image_url',
                   'created_on', 'active', 'posts')
-        depth = 1
+        depth = 3
