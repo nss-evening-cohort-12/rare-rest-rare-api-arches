@@ -26,6 +26,8 @@ class PostsViewSet(ViewSet):
 
         try:
             post.save()
+            post.tags.set(request.data["tags"])
+            post.save()
             serializer = PostSerializer(post, context={'request': request})
             return Response(serializer.data)
 
@@ -55,6 +57,7 @@ class PostsViewSet(ViewSet):
 
         category = Category.objects.get(pk=request.data["category_id"])
         post.category = category
+        post.tags.set(request.data["tags"])
         post.save()
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
