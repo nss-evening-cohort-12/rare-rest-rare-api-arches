@@ -26,6 +26,7 @@ class PostsViewSet(ViewSet):
 
         try:
             post.save()
+            post.tags.set(request.data["tags"])
             serializer = PostSerializer(post, context={'request': request})
             return Response(serializer.data)
 
