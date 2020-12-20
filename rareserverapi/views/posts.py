@@ -5,9 +5,10 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from rareserverapi.models import Post, RareUsers, Category, Tag
+from rareserverapi.models import Post, RareUsers, Category, Tag, PostImage
 from rareserverapi.serializers import PostSerializer
 from rest_framework.decorators import action
+
 
 class PostsViewSet(ViewSet):
 
@@ -33,8 +34,6 @@ class PostsViewSet(ViewSet):
 
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
-
-
 
     def retrieve(self, request, pk=None):
         try:
@@ -83,7 +82,7 @@ class PostsViewSet(ViewSet):
         # These filters all you to do http://localhost:8000/posts?category=1 or
         # http://localhost:8000/posts?user=1 or
         # http://localhost:8000/posts?category=1&user=2
-        
+
         if category is not None:
             posts = posts.filter(category__id=category)
 
@@ -106,7 +105,7 @@ class PostsViewSet(ViewSet):
 
         except Post.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-        
+
         except Tag.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
