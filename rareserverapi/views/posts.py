@@ -22,6 +22,10 @@ class PostsViewSet(ViewSet):
         post.approved = True
         post.rareuser = creator
 
+        if "post_image" in request.data and request.data["post_image"] is not None:
+            post.post_image = PostImage.objects.get(
+                pk=request.data["post_image"])
+
         category = Category.objects.get(pk=request.data["category_id"])
         post.category = category
 
@@ -53,6 +57,10 @@ class PostsViewSet(ViewSet):
         post.content = request.data["content"]
         post.approved = True
         post.rareuser = creator
+
+        if "post_image" in request.data:
+            post.post_image = PostImage.objects.get(
+                pk=request.data["post_image"])
 
         category = Category.objects.get(pk=request.data["category_id"])
         post.category = category
