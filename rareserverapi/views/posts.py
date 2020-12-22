@@ -18,7 +18,7 @@ class PostsViewSet(ViewSet):
         post.title = request.data["title"]
         post.image_url = request.data["image_url"]
         post.content = request.data["content"]
-        post.approved = True
+        post.approved = creator.user.is_staff
         post.rareuser = creator
 
         category = Category.objects.get(pk=request.data["category_id"])
