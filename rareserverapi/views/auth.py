@@ -92,3 +92,20 @@ def get_current_user(request):
         data = json.dumps(
             {"valid": False, "msg": "No currently authenticated user."})
         return HttpResponse(data, content_type='application/json')
+
+
+@csrf_exempt
+def is_current_user_admin(request):
+
+    req_body = json.loads(request.body.decode())
+
+    try:
+        user_id = Token.objects.get(key=req_body['token']).user_id
+        is_admin = User.objects.get(pk=user_id).is_staff
+        data = json.dumps({"is_user_admin": is_admin})
+        return HttpResponse(data, content_type="application/json")
+    except Token.DoesNotExist:
+        data = json.dumps(
+            {"valid": False, "msg": "No currently authenticated user."}
+        )
+        return HttpResponse(data, content_type="application/json")
