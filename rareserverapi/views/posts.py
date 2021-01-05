@@ -57,11 +57,16 @@ class PostsViewSet(ViewSet):
         return Response({}, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
-
         try:
-            post = Post.objects.get(pk=pk)
-            post.delete()
+            # If user is an admin (is_staff == true), then we can just
+            # delete the post by pk.  Otherwise, we should verify that
+            # the user owns that post before deleting it.
+            if request.user.is_staff:
+                post = Post.objects.get(pk=pk)
+            else:
+                post = Post.objects.get(pk=pk, rareuser_id=request.user.id)
 
+            post.delete()
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 
         except Post.DoesNotExist as ex:
