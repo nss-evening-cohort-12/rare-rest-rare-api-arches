@@ -9,5 +9,5 @@ class UsersSerializer(serializers.ModelSerializer):
         user = get_user_model()
         posts = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
         fields = ('id', 'user', 'bio', 'profile_image_url',
-                  'created_on', 'active', 'posts')
+                  'created_on', 'posts')
         depth = 3
