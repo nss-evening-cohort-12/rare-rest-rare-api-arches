@@ -11,3 +11,6 @@ class Reaction(models.Model):
 class PostReactions(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
     reaction = models.ForeignKey("Reaction", on_delete=CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'reaction',)
