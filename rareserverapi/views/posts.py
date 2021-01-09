@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from rareserverapi.models import Post, RareUsers, Category, Tag
+from rareserverapi.models import Post, RareUsers, Category, Tag, PostReactions
 from rareserverapi.serializers import PostSerializer
 from rest_framework.decorators import action
 
