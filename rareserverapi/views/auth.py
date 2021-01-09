@@ -27,6 +27,7 @@ def register_user(request):
         password=req_body['password'],
         first_name=req_body['first_name'],
         last_name=req_body['last_name'],
+        is_active=True,
         is_staff=False
     )
 
@@ -34,7 +35,6 @@ def register_user(request):
     rareUser = RareUsers.objects.create(
         bio=req_body['bio'],
         profile_image_url=req_body['profile_image_url'],
-        active=True,
         user=new_user
     )
 
