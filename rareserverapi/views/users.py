@@ -35,11 +35,10 @@ class UsersViewSet(ViewSet):
             if (key == "id"):
                 continue
             setattr(baseUser, key, val)
-            # baseUser.key = val
-        baseUser.is_staff = newUserObj["is_staff"]
+            # baseUser.key = val        
         baseUser.save()
-        serializer.bio = request.data['bio']
-        serializer.profile_image_url = request.data['profile_image_url']
+        for key, val in request.data.items():
+            setattr(serializer, key, val)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
