@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rareserverapi.models import Post, PostReactions
+from rareserverapi.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
