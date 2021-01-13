@@ -30,9 +30,6 @@ class PostReactionViewSet(ViewSet):
 
             post.reactions.remove(postreaction)
 
-            # user = User.objects.get(pk=request.data["user_id"])
-            # reaction = Reaction.objects.get(pk=request.data["reaction_id"])
-
         except Exception as ex:
             return HttpResponseServerError(ex)
 
