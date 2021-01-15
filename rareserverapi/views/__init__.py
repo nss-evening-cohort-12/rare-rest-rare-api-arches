@@ -5,4 +5,6 @@ from .comments import CommentViewSet
 from .posttags import PostTagViewSet
 from .users import UsersViewSet
 from .tags import TagViewSet
+from .reactions import ReactionViewSet
+from .postreactions import PostReactionViewSet
 from .subscriptions import SubscriptionsViewSet

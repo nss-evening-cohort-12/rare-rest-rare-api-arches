@@ -6,8 +6,7 @@
             "user": 1,
             "bio": "about Nikhil",
             "profile_image_url": "image_url_placeholder",
-            "created_on": "2020-08-28",
-            "active": true
+            "created_on": "2020-08-28"
         }
     },
     {
@@ -17,8 +16,7 @@
             "user": 2,
             "bio": "about Jonathan",
             "profile_image_url": "image_url_placeholder",
-            "created_on": "2020-08-28",
-            "active": true
+            "created_on": "2020-08-28"
         }
     },
     {
@@ -28,8 +26,7 @@
             "user": 3,
             "bio": "about Nick",
             "profile_image_url": "image_url_placeholder",
-            "created_on": "2020-08-28",
-            "active": true
+            "created_on": "2020-08-28"
         }
     },
     {
@@ -39,8 +36,7 @@
             "user": 4,
             "bio": "about Ponch",
             "profile_image_url": "image_url_placeholder",
-            "created_on": "2020-08-28",
-            "active": true
+            "created_on": "2020-08-28"
         }
     }
 ]
