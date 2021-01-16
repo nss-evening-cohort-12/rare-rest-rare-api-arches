@@ -85,12 +85,12 @@ class SubscriptionsViewSet(ViewSet):
 
 
     def update(self, request, pk=None):
-        set_end_null = request.data["ended_on"]
+        # set_end_null = request.data["ended_on"]
         subscription = Subscriptions.objects.get(pk=pk)
-        if set_end_null is False:
-          subscription.ended_on = None
-        else:
+        if subscription.ended_on is None:
           subscription.ended_on = datetime.now()
+        else:
+          subscription.ended_on = None
 
         subscription.save()
 
