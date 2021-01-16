@@ -1,4 +1,5 @@
 from rareserverapi.models.rareUsers import RareUsers
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db.models.fields import NullBooleanField
 from rest_framework import status
@@ -29,9 +30,11 @@ class SubscriptionsViewSet(ViewSet):
         subscriptions = Subscriptions.objects.all()
         follower = request.query_params.get('follower', None)
         author = request.query_params.get('author', None)
-        if follower is not None:
+        if request.query_params.get('follower', None) is not None:
             subscriptions = subscriptions.filter(follower_id=follower)
-        elif author is not None:
+        else:
+            subscriptions = subscriptions.filter(follower_id=request.user.id)
+        if author is not None:
             subscriptions = subscriptions.filter(author_id=author)
         serializer = SubscriptionsSerializer(
           subscriptions, many=True, context={'request': request})
@@ -40,7 +43,7 @@ class SubscriptionsViewSet(ViewSet):
     
     def create(self, request):
         try:
-          follower = RareUsers.objects.get(pk=request.data["follower_id"])
+          follower = RareUsers.objects.get(pk=request.user.id)
           author = RareUsers.objects.get(pk=request.data["author_id"])
           subscription = Subscriptions()
           subscription.follower_id = follower
@@ -48,7 +51,7 @@ class SubscriptionsViewSet(ViewSet):
           subscription.ended_on = None
 
           try:
-            exists = Subscriptions.objects.get(follower_id=request.data["follower_id"], author_id=request.data["author_id"])
+            exists = Subscriptions.objects.get(follower_id=follower, author_id=request.data["author_id"])
           except Subscriptions.DoesNotExist as ex:
             try:
               subscription.save()
